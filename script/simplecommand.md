@@ -1,6 +1,11 @@
 ## simplecommand
 
-각 노드에 ls 명령어 내려보기
+```
+ansible-playbook -i ./testsample simple_command.yml -k -K
+```
+
+#### 각 노드에 ls 명령어 내려보기
+
 
 ```yml
 - name: playbook test
