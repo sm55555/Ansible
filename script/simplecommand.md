@@ -1,6 +1,6 @@
 ## simplecommand
 
-간단 ls 명령어 내려보기
+각 노드에 ls 명령어 내려보기
 
 ```yml
 - name: playbook test
@@ -20,3 +20,5 @@
       var: output.stdout_liens
   
 ```
+
+각 노드에 파일 압축하기
