@@ -33,7 +33,7 @@ ansible-playbook -i ./testsample simple_command.yml -k -K
 - name: playbook test
   hosts: [hosts 파일 상단의 [내용]]
   become: true
-  #become_user: root   ->  root로 유저 변경
+  become_user: root
   gather_facts: false
   vars:
     - ansible_user: sm55555
