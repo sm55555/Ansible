@@ -26,7 +26,7 @@ ansible-playbook -i ./testsample simple_command.yml -k -K
   
 ```
 
-각 노드에 /home/testapp/*.log 파일 압축하기
+#### 각 노드에 /home/testapp/*.log 파일 압축하기
 
 
 ```yml
