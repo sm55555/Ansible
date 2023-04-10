@@ -1,6 +1,6 @@
 #### 각 노드의 특정 프로 세스 죽이기
 
-```
+```yml
 - name: playbook test
   hosts: [hosts 파일 상단의 [내용]]
   become: true
