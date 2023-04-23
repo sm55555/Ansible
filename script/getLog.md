@@ -62,6 +62,32 @@ master (pam_tally2 권한이 있는 계정)을 통한 test pam_tally2 초기화
       var: output.stdout_liens
 ```
 
+### 활용해서 ansible_host만들기
+
+아래와 같은 ASG를 ansible_host 파일로만들 경우
+
+```
+| aws-test-asg           | 111.11.20.15 |
+| aws-test-asg           | 111.11.20.16 |
+| aws-test-asg           | 111.11.20.17 |
+| aws-test-asg           | 111.11.21.21 |
+| aws-test-asg           | 111.11.21.22 |
+| aws-test-asg           | 111.11.21.23 |
+| aws-test-asg           | 111.11.22.31 |
+| aws-test-asg           | 111.11.22.32 |
+| aws-test-asg           | 111.11.22.33 |
+
+
+명령어 출력문 | awk '{ print $2NR" ansible_host="$4}'
+
+aws-test-asg1 ansible_host=111.11.20.15
+aws-test-asg2 ansible_host=111.11.20.16
+aws-test-asg3 ansible_host=111.11.20.17
+...
+aws-test-asg9 ansible_host=111.11.22.33
+```
+
+
 #### ansible_host에 있는 정보를 이용하여 log 압축 및 fetch
 
 ```yml
