@@ -61,3 +61,31 @@ master (pam_tally2 권한이 있는 계정)을 통한 test pam_tally2 초기화
   - debug:
       var: output.stdout_liens
 ```
+
+#### ansible_host에 있는 정보를 이용하여 log 압축 및 fetch
+
+```yml
+- name: playbook test
+  hosts: [hosts 파일 상단의 [내용]]
+  become: true
+  become_method: sudo
+  gather_facts: false
+  vars:
+    - ansible_user: test
+      
+  tasks:
+  - name: File compression
+    shell: tar czvf "{{ ansible_host }}"-0423.tgz /app/log/log-20230423*
+    register: output
+    
+  - name: Fetch File
+    fetch:
+     src: "{{ ansible_host }}-0423.tgz"
+     dest: /user/home/test
+     flat: true
+    register: output
+  
+  - debug:
+      var: output.stdout_liens
+```
+
