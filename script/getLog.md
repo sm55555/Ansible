@@ -1,3 +1,5 @@
+### 로그 정재
+
 #### 각 노드에 master (passwd 권한이 있는 계정)을 통한 test 유저 비번 초기화 ( 왜냐하면 만료된 계정이 있는 서버가 존재할 수 있다.
 master 유저 비번 (Password1!)
 test 유저 비번 (test1!)
