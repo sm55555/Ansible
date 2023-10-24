@@ -117,3 +117,20 @@ aws-test-asg9 ansible_host=111.11.22.33
       var: output.stdout_liens
 ```
 
+#### 로그 형태에 따라 다르게 변경 가능
+
+* 뒤에는 -Test.log 포함된거
+
+```
+shell: tar czvf "{{ ansible_host }}"-0423.tgz /app/log/log-20230423*-Test.log
+```
+
+
+log- 다음에 숫자 2개 아무거나 받고 -Test.log
+```
+shell: tar czvf "{{ ansible_host }}"-0423.tgz /app/log/log-[0-9][0-9]-Test.log
+```
+
+
+
+
